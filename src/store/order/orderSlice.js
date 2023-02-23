@@ -6,7 +6,7 @@ const initialState = {
 
 export const localStorageMiddleware = (store) => (next) => (action) => {
   const nextAction = next(action);
-  if (nextAction.type.startWith("order/")) {
+  if (nextAction.type.startsWith("order/")) {
     const orderList = store.getState().order.orderList;
     localStorage.setItem("order", JSON.stringify(orderList));
   }

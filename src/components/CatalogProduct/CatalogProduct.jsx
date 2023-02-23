@@ -8,7 +8,7 @@ export const CatalogProduct = ({ good }) => {
   return (
     <article className={style.product}>
       <img
-        src={`${API_URI}/${item.image}`}
+        src={`${API_URI}/${good.image}`}
         alt={good.title}
         className={style.product__image}
       />
@@ -22,7 +22,7 @@ export const CatalogProduct = ({ good }) => {
         <button className={style.product__detail}>{good.title}</button>
       </h3>
 
-      <p className={style.product__weight}>{product.weight}г</p>
+      <p className={style.product__weight}>{good.weight}г</p>
 
       <button
         className={style.product__add}

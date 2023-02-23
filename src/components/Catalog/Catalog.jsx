@@ -8,10 +8,12 @@ import { useEffect } from "react";
 import { productRequestAsync } from "../../store/product/productSlice";
 
 export const Catalog = () => {
+  const state = useSelector((state) => state);
+  console.log(state);
   const { products } = useSelector((state) => state.products);
   const { category, activeCategory } = useSelector((state) => state.category);
   const dispatch = useDispatch();
-
+  console.log("state", state);
   useEffect(() => {
     if (category.length) {
       dispatch(productRequestAsync(category[activeCategory].title));
