@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #F2F2F3;
+  background: #f2f2f3;
   border-radius: 8px;
   padding: 7px 8px;
   font-weight: 400;
@@ -15,11 +15,13 @@
 .count__minus {
   width: 8px;
 }
+.count__minus:disabled {
+  cursor: default;
+}
 
 .count__plus {
   width: 8px;
 }
-
 
 @media (min-width: 1024px) {
   .count {
