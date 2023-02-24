@@ -9,11 +9,11 @@ import { productRequestAsync } from "../../store/product/productSlice";
 
 export const Catalog = () => {
   const state = useSelector((state) => state);
-  console.log(state);
+
   const { products } = useSelector((state) => state.products);
   const { category, activeCategory } = useSelector((state) => state.category);
   const dispatch = useDispatch();
-  console.log("state", state);
+
   useEffect(() => {
     if (category.length) {
       dispatch(productRequestAsync(category[activeCategory].title));
@@ -31,13 +31,19 @@ export const Catalog = () => {
             </h2>
 
             <div className={style.catalog__wrap_list}>
-              <ul className={style.catalog__list}>
-                {products.map((good) => (
-                  <li key={good.id} className={style.catalog__item}>
-                    <CatalogProduct good={good} />
-                  </li>
-                ))}
-              </ul>
+              {products.length ? (
+                <ul className={style.catalog__list}>
+                  {products.map((good) => (
+                    <li key={good.id} className={style.catalog__item}>
+                      <CatalogProduct good={good} />
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className={style.empty}>
+                  К сожалению продуктов данной категории нет
+                </p>
+              )}
             </div>
           </div>
         </Container>

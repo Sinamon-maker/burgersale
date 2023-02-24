@@ -178,6 +178,12 @@
     font-size: 16px;
     margin-bottom: 8px;
   }
+  .order__submit:disabled {
+    background-color: #c4c4c7;
+    opacity: 0.7;
+    color: black;
+    cursor: no-drop;
+  }
 
   .order__apeal {
     font-size: 12px;
